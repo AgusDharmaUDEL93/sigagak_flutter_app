@@ -1,16 +1,46 @@
 # sigagak_flutter_app
 
-A new Flutter project.
+A multiplatform-based application that can make it easier for users to get services at Provincial/District/City UPTD PPA in Bali. In addition, this system is integrated with UPTD PPA throughout Bali.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+First you need to install flutter on your computer. You can follow the instructions on the official website [here](https://flutter.dev/docs/get-started/install).
 
-A few resources to get you started if this is your first Flutter project:
+## Running the app
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+First, you need to clone this repository by using this command:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone <https or ssh git url>
+```
+
+Then, you need to install all the dependencies by using this command:
+
+```bash
+flutter pub get
+```
+
+after that, you can run the app by using this command:
+
+```bash
+flutter run
+```
+
+or you can run the app on your device by using this command:
+
+```bash
+flutter run -d <device id>
+```
+
+## State Management
+
+This project is using GetX as the state management. You can read the documentation [here](https://pub.dev/packages/get).
+GetX is one of the most popular state management in flutter community. It is easy to use and it is also easy to learn.
+
+## Contributing
+
+<table align="center">
+    <tr>
+        <td align="center"><a href="https://github.com/AgusDharmaUDEL93"><img src="https://avatars.githubusercontent.com/u/92203868?v=4" width="150px;" alt=""/><br><sub><b>Agus Dharma (GusUdel)</b></sub></td>
+    </tr>
+</table>
