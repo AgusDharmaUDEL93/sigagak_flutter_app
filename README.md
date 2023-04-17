@@ -4,7 +4,7 @@ A multiplatform-based application that can make it easier for users to get servi
 
 ## Getting Started
 
-First you need to install flutter on your computer. You can follow the instructions on the official website [here](https://flutter.dev/docs/get-started/install).
+First you need to install flutter on your computer. You can follow the instructions on the official website [here](https://flutter.dev/docs/get-started/install). Flutter is a cross-platform framework that allows you to build native apps for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase.
 
 ## Running the app
 
