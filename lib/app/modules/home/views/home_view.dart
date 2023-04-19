@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sigagak_flutter_app/app/routes/app_pages.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -110,7 +111,9 @@ class HomeView extends GetView<HomeController> {
                             child: SizedBox(),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed(Routes.LOGIN);
+                            },
                             child: Container(
                               width: Get.width,
                               height: 55,
@@ -120,7 +123,7 @@ class HomeView extends GetView<HomeController> {
                               ),
                               child: Center(
                                 child: Text(
-                                  "Log in",
+                                  "Login",
                                   style: GoogleFonts.poppins(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w600,
@@ -132,7 +135,9 @@ class HomeView extends GetView<HomeController> {
                             ),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed(Routes.REGISTER);
+                            },
                             child: Container(
                               width: Get.width,
                               height: 55,
