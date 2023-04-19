@@ -98,6 +98,10 @@ class RegisterView extends GetView<RegisterController> {
                     const SizedBox(
                       height: 20,
                     ),
+                    TextFieldFilled(label: "Input Email"),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     Obx(
                       () => TextFieldPassword(
                         label: "Input Password",
