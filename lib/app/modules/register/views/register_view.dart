@@ -115,31 +115,14 @@ class RegisterView extends GetView<RegisterController> {
                     ),
                     Obx(
                       () => TextFieldPassword(
-                        label: "Konfirmasi Password",
+                        label: "Ulangi Password",
                         obscureText: controller.obscureTextPass(1),
                         toggle: () => controller.changeState(1),
                         iconStatus: controller.iconStatus(1),
                       ),
                     ),
-                    Container(
-                      width: Get.width,
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {
-                          Get.toNamed("/home");
-                        },
-                        child: Text(
-                          "Lupa password ?",
-                          style: GoogleFonts.poppins(
-                            fontSize: 15,
-                            fontWeight: FontWeight.normal,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                        ),
-                      ),
-                    ),
                     const SizedBox(
-                      height: 30,
+                      height: 55,
                     ),
                     TextButton(
                       onPressed: () {},
