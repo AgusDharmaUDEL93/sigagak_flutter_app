@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sigagak_flutter_app/app/routes/app_pages.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -40,7 +41,7 @@ class HomeView extends GetView<HomeController> {
                   Container(
                     width: Get.width * 0.8,
                     child: Text(
-                      "Sistem Pengaduan dan Penanganan Kasus",
+                      'subtitle'.tr,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         fontSize: 17,
@@ -91,7 +92,7 @@ class HomeView extends GetView<HomeController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Selamat Datang",
+                            "welcome".tr,
                             style: GoogleFonts.poppins(
                               fontSize: 24,
                               fontWeight: FontWeight.w600,
@@ -99,7 +100,7 @@ class HomeView extends GetView<HomeController> {
                             ),
                           ),
                           Text(
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+                            "home_desc".tr,
                             textAlign: TextAlign.justify,
                             style: GoogleFonts.poppins(
                               fontSize: 16,
@@ -168,6 +169,24 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ],
               ),
+            ),
+          ),
+          Positioned(
+            top: 70,
+            right: 30,
+            child: ToggleSwitch(
+              minWidth: 50.0,
+              initialLabelIndex: controller.toggleValue.value,
+              activeBgColor: [Theme.of(context).colorScheme.primary],
+              inactiveBgColor: Theme.of(context).colorScheme.onPrimary,
+              borderColor: [Theme.of(context).colorScheme.primary],
+              borderWidth: 1,
+              cornerRadius: 15,
+              labels: const ['ID', 'EN'],
+              totalSwitches: 2,
+              onToggle: (index) {
+                controller.changeToggleValue(index ?? 0);
+              },
             ),
           ),
         ],

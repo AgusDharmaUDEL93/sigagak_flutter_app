@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../components/text_field_filled.dart';
@@ -46,7 +47,7 @@ class LoginView extends GetView<LoginController> {
                     SizedBox(
                       width: 200,
                       child: Text(
-                        "Sistem Pengaduan dan Penanganan Kasus",
+                        "subtitle".tr,
                         style: GoogleFonts.poppins(
                           fontSize: 12,
                           fontWeight: FontWeight.w300,
@@ -81,7 +82,7 @@ class LoginView extends GetView<LoginController> {
                 height: 5,
               ),
               Text(
-                "Silahkan login untuk melanjutkan!",
+                "login_subtitle".tr,
                 style: GoogleFonts.poppins(
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
@@ -94,13 +95,13 @@ class LoginView extends GetView<LoginController> {
               Form(
                 child: Column(
                   children: [
-                    TextFieldFilled(label: "Input NIK"),
+                    TextFieldFilled(label: "nik_input".tr),
                     const SizedBox(
                       height: 20,
                     ),
                     Obx(
                       () => TextFieldPassword(
-                        label: "Input Password",
+                        label: "password_input".tr,
                         obscureText: controller.obscureTextPass(),
                         toggle: controller.changeState,
                         iconStatus: controller.iconStatus(),
@@ -112,7 +113,7 @@ class LoginView extends GetView<LoginController> {
                       child: TextButton(
                         onPressed: () {},
                         child: Text(
-                          "Lupa password ?",
+                          "forgot_password".tr,
                           style: GoogleFonts.poppins(
                             fontSize: 15,
                             fontWeight: FontWeight.normal,

@@ -46,7 +46,7 @@ class RegisterView extends GetView<RegisterController> {
                     SizedBox(
                       width: 200,
                       child: Text(
-                        "Sistem Pengaduan dan Penanganan Kasus",
+                        "subtitle".tr,
                         style: GoogleFonts.poppins(
                           fontSize: 12,
                           fontWeight: FontWeight.w300,
@@ -81,7 +81,7 @@ class RegisterView extends GetView<RegisterController> {
                 height: 5,
               ),
               Text(
-                "Silahkan register untuk melanjutkan!",
+                "register_subtitle".tr,
                 style: GoogleFonts.poppins(
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
@@ -94,17 +94,17 @@ class RegisterView extends GetView<RegisterController> {
               Form(
                 child: Column(
                   children: [
-                    TextFieldFilled(label: "Input NIK"),
+                    TextFieldFilled(label: "nik_input".tr),
                     const SizedBox(
                       height: 20,
                     ),
-                    TextFieldFilled(label: "Input Email"),
+                    TextFieldFilled(label: "email_input".tr),
                     const SizedBox(
                       height: 20,
                     ),
                     Obx(
                       () => TextFieldPassword(
-                        label: "Input Password",
+                        label: "password_input".tr,
                         obscureText: controller.obscureTextPass(0),
                         toggle: () => controller.changeState(0),
                         iconStatus: controller.iconStatus(0),
@@ -115,7 +115,7 @@ class RegisterView extends GetView<RegisterController> {
                     ),
                     Obx(
                       () => TextFieldPassword(
-                        label: "Ulangi Password",
+                        label: "repeat_password_input".tr,
                         obscureText: controller.obscureTextPass(1),
                         toggle: () => controller.changeState(1),
                         iconStatus: controller.iconStatus(1),
