@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sigagak_flutter_app/app/routes/app_pages.dart';
 
 import '../../../../components/text_field_filled.dart';
 import '../../../../components/text_field_password.dart';
@@ -66,90 +67,112 @@ class LoginView extends GetView<LoginController> {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
         child: Container(
-          width: Get.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Login",
-                style: GoogleFonts.poppins(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w600,
-                  color: Theme.of(context).colorScheme.onBackground,
+          width: double.infinity,
+          height: double.infinity,
+          alignment: Alignment.center,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Login",
+                  style: GoogleFonts.poppins(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w600,
+                    color: Theme.of(context).colorScheme.onBackground,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Text(
-                "login_subtitle".tr,
-                style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  fontWeight: FontWeight.normal,
-                  color: Theme.of(context).colorScheme.onBackground,
+                const SizedBox(
+                  height: 5,
                 ),
-              ),
-              const SizedBox(
-                height: 55,
-              ),
-              Form(
-                child: Column(
-                  children: [
-                    TextFieldFilled(label: "nik_input".tr),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Obx(
-                      () => TextFieldPassword(
-                        label: "password_input".tr,
-                        obscureText: controller.obscureTextPass(),
-                        toggle: controller.changeState,
-                        iconStatus: controller.iconStatus(),
+                Text(
+                  "login_subtitle".tr,
+                  style: GoogleFonts.poppins(
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal,
+                    color: Theme.of(context).colorScheme.onBackground,
+                  ),
+                ),
+                const SizedBox(
+                  height: 55,
+                ),
+                Form(
+                  key: controller.formKey,
+                  child: Column(
+                    children: [
+                      TextFieldFilled(label: "nik_input".tr),
+                      const SizedBox(
+                        height: 20,
                       ),
-                    ),
-                    Container(
-                      width: Get.width,
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "forgot_password".tr,
-                          style: GoogleFonts.poppins(
-                            fontSize: 15,
-                            fontWeight: FontWeight.normal,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
+                      Obx(
+                        () => TextFieldPassword(
+                          validation: (value) => controller.validation(value),
+                          label: "password_input".tr,
+                          obscureText: controller.obscureTextPass(),
+                          toggle: controller.changeState,
+                          iconStatus: controller.iconStatus(),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Container(
-                        height: 55,
+                      Container(
                         width: Get.width,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                        child: Center(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {},
                           child: Text(
-                            "Login",
+                            "forgot_password".tr,
                             style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: Theme.of(context).colorScheme.onPrimary,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal,
+                              color: Theme.of(context).colorScheme.primary,
                             ),
                           ),
                         ),
                       ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          controller.formKey.currentState!.validate();
+                        },
+                        child: Container(
+                          height: 55,
+                          width: Get.width,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Login",
+                              style: GoogleFonts.poppins(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: Theme.of(context).colorScheme.onPrimary,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("ask_account".tr),
+                    TextButton(
+                      onPressed: () {
+                        Get.offNamed(Routes.REGISTER);
+                      },
+                      child: Text(
+                        "register".tr,
+                      ),
                     ),
                   ],
-                ),
-              ),
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),

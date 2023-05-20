@@ -16,6 +16,10 @@ class Languange extends Translations {
           "repeat_password_input": "Repeat Password",
           "forgot_password": "Forgot password?",
           "register_subtitle": "Please register to continue!",
+          "register": "Register",
+          "login": "Login",
+          "ask_account": "Don't have account ?",
+          "have_account": "Already have an account ?"
         },
         "id": {
           "subtitle": "Sistem Pengaduan dan Penanganan Kasus",
@@ -28,7 +32,11 @@ class Languange extends Translations {
           "email_input": "Masukkan Email",
           "repeat_password_input": "Ulangi Password",
           "forgot_password": "Lupa password?",
-          "register_subtitle": "Silahkan register untuk melanjutkan!"
+          "register_subtitle": "Silahkan register untuk melanjutkan!",
+          "register": "Daftar",
+          "login": "Masuk",
+          "ask_account": "Tidak punya akun ?",
+          "have_account": "Sudah punya akun ?"
         }
       };
 }

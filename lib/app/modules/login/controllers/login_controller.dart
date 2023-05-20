@@ -5,7 +5,8 @@ class LoginController extends GetxController {
   //TODO: Implement LoginController
 
   final count = 0.obs;
-    var _isVisible = false.obs;
+  var _isVisible = false.obs;
+  var formKey = GlobalKey<FormState>();
 
   @override
   void onInit() {
@@ -21,6 +22,7 @@ class LoginController extends GetxController {
   void onClose() {
     super.onClose();
   }
+
   bool obscureTextPass() {
     return _isVisible.value ? false : true;
   }
@@ -35,5 +37,14 @@ class LoginController extends GetxController {
     _isVisible.value = !_isVisible.value;
   }
 
-  void increment() => count.value++;
+  String? validation(String value) {
+    if (value.length < 8) {
+      return 'Must be more than 8 charater';
+    }
+    return null;
+  }
+
+  void submit() {
+    formKey.currentState!.validate();
+  }
 }

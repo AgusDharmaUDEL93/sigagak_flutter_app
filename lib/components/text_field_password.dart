@@ -8,16 +8,29 @@ class TextFieldPassword extends StatelessWidget {
     required this.toggle,
     required this.iconStatus,
     required this.label,
+    required this.validation,
   });
 
   final bool obscureText;
   final Function toggle;
   final Widget iconStatus;
   final String label;
+  final String? Function(String value) validation;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter some text';
+        }
+        String message = validation(value) ?? "";
+
+        if (message.isEmpty) {
+          return null;
+        }
+        return message;
+      },
       obscureText: obscureText,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(

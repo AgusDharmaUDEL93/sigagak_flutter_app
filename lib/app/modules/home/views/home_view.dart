@@ -124,7 +124,7 @@ class HomeView extends GetView<HomeController> {
                               ),
                               child: Center(
                                 child: Text(
-                                  "Login",
+                                  "login".tr,
                                   style: GoogleFonts.poppins(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w600,
@@ -152,7 +152,7 @@ class HomeView extends GetView<HomeController> {
                               ),
                               child: Center(
                                 child: Text(
-                                  "Register",
+                                  "register".tr,
                                   style: GoogleFonts.poppins(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w600,
