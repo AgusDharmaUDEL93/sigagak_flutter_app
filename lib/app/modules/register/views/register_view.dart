@@ -143,7 +143,11 @@ class RegisterView extends GetView<RegisterController> {
                           ),
                           TextButton(
                             onPressed: () {
-                              controller.formkey.currentState!.validate();
+                              var isValid =
+                                  controller.formkey.currentState!.validate();
+                              if (isValid) {
+                                Get.offAllNamed(Routes.DASHBOARD);
+                              }
                             },
                             child: Container(
                               height: 55,

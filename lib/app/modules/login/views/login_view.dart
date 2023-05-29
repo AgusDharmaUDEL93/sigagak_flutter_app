@@ -133,7 +133,11 @@ class LoginView extends GetView<LoginController> {
                       ),
                       TextButton(
                         onPressed: () {
-                          controller.formKey.currentState!.validate();
+                          var isValid =
+                              controller.formKey.currentState!.validate();
+                          if (isValid) {
+                            Get.offAllNamed(Routes.DASHBOARD);
+                          }
                         },
                         child: Container(
                           height: 55,
